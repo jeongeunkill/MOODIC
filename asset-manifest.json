@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/MOODIC/static/css/main.3ac47c46.css",
+    "main.js": "/MOODIC/static/js/main.867eb8be.js",
+    "static/media/chab.ttf": "/MOODIC/static/media/chab.73854a05b07c4f60f35d.ttf",
+    "static/media/ddang Medium.ttf": "/MOODIC/static/media/ddang Medium.bcbb501c9290c7680b30.ttf",
+    "static/media/ddang Light.ttf": "/MOODIC/static/media/ddang Light.14e03efefa9c06243910.ttf",
+    "static/media/ddag Bold.ttf": "/MOODIC/static/media/ddag Bold.a34752d5f1ed705b5b7c.ttf",
+    "static/media/KIMM_Light.ttf": "/MOODIC/static/media/KIMM_Light.7dc966f19049edb15fc7.ttf",
+    "static/media/KIMM_bold.ttf": "/MOODIC/static/media/KIMM_bold.11f0c8a3d9709b4c859e.ttf",
+    "static/media/home_bg.png": "/MOODIC/static/media/home_bg.58844718086d645bdc32.png",
+    "static/media/bg.jpg": "/MOODIC/static/media/bg.3b08e06c4a91d45db23c.jpg",
+    "static/media/ivory_bg.jpg": "/MOODIC/static/media/ivory_bg.3b08e06c4a91d45db23c.jpg",
+    "static/media/green_bg.jpg": "/MOODIC/static/media/green_bg.b2eb68867dc820679f03.jpg",
+    "index.html": "/MOODIC/index.html",
+    "main.3ac47c46.css.map": "/MOODIC/static/css/main.3ac47c46.css.map",
+    "main.867eb8be.js.map": "/MOODIC/static/js/main.867eb8be.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ac47c46.css",
+    "static/js/main.867eb8be.js"
+  ]
+}
