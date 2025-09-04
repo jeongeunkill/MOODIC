@@ -1,0 +1,158 @@
+.login-wrap {
+  background: url('/img/ivory_bg.jpg') no-repeat center center / cover;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .login-header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
+    ul {
+      display: flex;
+      li {
+        padding: 10px;
+        img {
+          width: 18px;
+        }
+      }
+    }
+  }
+
+  .main {
+    background: none;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    
+    .left img {
+      width: 540px;
+      position: absolute;
+      top: 15rem;
+      left: 400px;
+    }
+
+    .icon_cat img {
+      width: 120px;
+      position: absolute;
+      top: 37rem;
+      left: 770px;
+      z-index: 10;
+    }
+
+    .icon_global img {
+      width: 224px;
+      height: 224px;
+      position: absolute;
+      left: 754px;
+      top: 8rem;
+      z-index: 9;
+    }
+
+    .icon_pink img {
+      width: 201px;
+      height: 185px;
+      position: absolute;
+      right: 5rem;
+      bottom: 4rem;
+      z-index: 10;
+    }
+
+    .icon_wave1 img {
+      width: 314px;
+      position: absolute;
+      left: 30px;
+      bottom: 0;
+      z-index: 9;
+    }
+
+    .icon_wave2 img {
+      height: 410px;
+      position: absolute;
+      right: 0;
+      top: 175px;
+      z-index: 9;
+    }
+
+    .icon_person img {
+      width: 137px;
+      height: 137px;
+      position: absolute;
+      right: 600px;
+      top: 10rem;
+      z-index: 10;
+    }
+
+    form {
+      width: 440px;
+      height: 530px;
+      position: absolute;
+      top: 18.5rem;
+      right: 450px;
+
+      fieldset {
+        border: 1px solid #222;
+        border-radius: 20px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        legend {
+          display: none;
+        }
+
+        .login img {
+          width: 121px;
+          height: 35px;
+          position: absolute;
+          top: 70px;
+          right: 160px;
+        }
+
+        .input-wrap {
+          position: absolute;
+          top: 150px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 100%;
+          padding: 0 30px;
+
+          input {
+            
+            height: 50px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid #ccc;
+          }
+
+          .submit-btn {
+            
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            height: 50px;
+          }
+
+          .signup-link {
+            text-align: center;
+            margin-top: 1rem;
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+}

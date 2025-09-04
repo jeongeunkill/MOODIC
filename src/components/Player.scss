@@ -1,0 +1,539 @@
+@import './fonts.scss'; 
+
+$toggle-width: 280px;
+$circle-size: 60px;
+$padding: 11px;
+$circle-toggled-left: calc(#{$toggle-width} - #{$circle-size} - #{$padding});
+
+.section.makes {
+  background: url(../img/ivory_bg.jpg);
+  color: #2a2119;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  z-index: 22;
+  position: relative;
+  font-family: 'KIMM';
+  .belt {
+      width: 100%;
+      height: 4rem; // 띠지 높이 조절
+      top: 0;
+      overflow: hidden;
+      background: transparent;
+      z-index: 100;
+      position: absolute;
+
+      .banner-track {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        animation: banner-scroll 20s linear infinite;
+        // 이미지가 충분히 많으면 자연스럽게 반복됨
+      }
+
+    .banner-img {
+        height: 4rem; // 이미지 높이 조절
+        user-select: none;
+        pointer-events: none;
+      }
+    }
+  .master-snap-sections {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-scrollbar {
+        position: absolute;
+        bottom: 3.3rem;
+        left: 3rem;
+        right: 0;
+        width: 95%;
+        height: .5rem;
+        background: rgba(255, 255, 255, 0);
+        z-index: 10;
+
+        &-drag {
+          background: #F6FF00;
+        }
+
+    }
+
+
+    .master-snap-section {
+      width: 95%;
+      height: 88%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      
+
+      &._1 {
+        .image-cover {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: top center; // 추가: 이미지의 맨 위를 중심으로 배치
+          border-radius: 12px;
+          transition: opacity 1s ease;
+        }
+
+        .snap-top-gradient {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          padding: 1.5rem;
+          background: linear-gradient(180deg, rgba(42, 33, 25, 0.8), transparent);
+
+          .text-wrap-snap {
+            color: #F6FF00;
+
+            .label {
+              font-weight: 700;
+              font-size: 1.5rem;
+              line-height: 1.4;
+              white-space: pre-line;
+              text-align: center;
+              margin-top: 7rem;
+              margin-bottom: 20rem;
+            }
+
+            .text-mask-snap {
+              margin-top: 0.5rem;
+
+              .text-snap-large {
+                font-size: 12rem;
+                font-weight: 900;
+                line-height: 1;
+                transition: opacity 0.3s ease;
+                text-align: center;
+                margin-top: 5px;
+
+                &.first-layer {
+                  opacity: 1;
+                }
+
+                &.second-layer {
+                  opacity: 0;
+                }
+              }
+            }
+          }
+        }
+        .sectionTayler .text-wrap-snap {
+          .label {
+            margin-top: 120px; // label을 더 아래로
+          }
+          .text-mask-snap {
+            margin-top: 20px; // texts를 label보다 위로
+          }
+        }
+        .snap-bottom-gradient {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 1.5rem;
+          background: linear-gradient(0deg, rgba(42, 33, 25, 0.8), transparent);
+          color: white;
+
+          .button-wrap-snap {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            .toggle-box {
+              position: relative;
+              width: $toggle-width;
+              width: 280px;
+              height: 70px;
+              background-color: #F6E636;
+              border: 2px solid #F6E636;
+              border-radius: 999px;
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+              overflow: hidden;
+              transition: background-color 0.3s ease;
+
+              .toggle-text {
+                position: absolute;
+                width: 220px;
+                text-align: center;
+                font-weight: 700;
+                font-size: 1.2rem;
+                color: #333;
+                transition: opacity 0.3s ease;
+
+                &.left {
+                  right: 0;
+                  opacity: 1;
+                }
+
+                &.right {
+                  left: 0;
+                  opacity: 0;
+                }
+              }
+
+              .toggle-circle {
+                width: $circle-size;
+                height: $circle-size;
+                border-radius: 50%;
+                background-color: orangered;
+                position: absolute;
+                top: .2rem;
+                left: $padding;
+                transition: left 0.4s ease;
+              }
+
+              &.toggled {
+                .toggle-circle {
+                  left: $circle-toggled-left; // 200 - 42 - 4
+                }
+
+                .toggle-text.left {
+                  opacity: 0;
+                }
+
+                .toggle-text.right {
+                  opacity: 1;
+                }
+              }
+            }
+
+            .label {
+              font-weight: 400;
+              font-size: 0.9rem;
+              opacity: 0.85;
+              color: white;
+            }
+          }
+        }
+      }
+      &._2 {
+        .image-cover {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: top center; // 추가: 이미지의 맨 위를 중심으로 배치
+          border-radius: 12px;
+          transition: opacity 1s ease;
+        }
+
+        .snap-top-gradient {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          padding: 1.5rem;
+          background: linear-gradient(180deg, rgba(42, 33, 25, 0.8), transparent);
+
+          .text-wrap-snap {
+            color: #F6FF00;
+      display: flex;
+      flex-direction: column;
+
+            .label {
+              margin-top: -330px;
+              font-weight: 700;
+              font-size: 1.5rem;
+              line-height: 1.4;
+              white-space: pre-line;
+              text-align: center;
+              order: 2;
+              margin-right: -80rem;
+            }
+
+            .text-mask-snap {
+              margin-top: 0.5rem;
+        order: 1;
+
+              .text-snap-large {
+              
+                margin-top: 200px;
+                font-size: 12rem;
+                font-weight: 900;
+                line-height: 1;
+                transition: opacity 0.3s ease;
+                text-align: center;
+                margin-left: 180px;
+
+                &.first-layer {
+                  opacity: 1;
+                  word-spacing: 2.6em;
+                }
+
+                &.second-layer {
+                  opacity: 0;
+                }
+              }
+            }
+          }
+        }
+        
+        .snap-bottom-gradient {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 1.5rem;
+          background: linear-gradient(0deg, rgba(42, 33, 25, 0.8), transparent);
+          color: white;
+
+          .button-wrap-snap {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            .toggle-box {
+              position: relative;
+              width: $toggle-width;
+              width: 280px;
+              height: 70px;
+              background-color: #F6E636;
+              border: 2px solid #F6E636;
+              border-radius: 999px;
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+              overflow: hidden;
+              transition: background-color 0.3s ease;
+
+              .toggle-text {
+                position: absolute;
+                width: 220px;
+                text-align: center;
+                font-weight: 700;
+                font-size: 1.2rem;
+                color: #333;
+                transition: opacity 0.3s ease;
+
+                &.left {
+                  right: 0;
+                  opacity: 1;
+                }
+
+                &.right {
+                  left: 0;
+                  opacity: 0;
+                }
+              }
+
+              .toggle-circle {
+                width: $circle-size;
+                height: $circle-size;
+                border-radius: 50%;
+                background-color: orangered;
+                position: absolute;
+                top: .2rem;
+                left: $padding;
+                transition: left 0.4s ease;
+              }
+
+              &.toggled {
+                .toggle-circle {
+                  left: $circle-toggled-left; // 200 - 42 - 4
+                }
+
+                .toggle-text.left {
+                  opacity: 0;
+                }
+
+                .toggle-text.right {
+                  opacity: 1;
+                }
+              }
+            }
+
+            .label {
+              font-weight: 400;
+              font-size: 0.9rem;
+              opacity: 0.85;
+              color: white;
+            }
+          }
+        }
+      }
+      &._3 {
+        .image-cover {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          object-position: center; // 추가: 이미지의 맨 위를 중심으로 배치
+          border-radius: 12px;
+          transition: opacity 1s ease;
+        }
+
+        .snap-top-gradient {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          padding: 1.5rem;
+          background: linear-gradient(180deg, rgba(42, 33, 25, 0.8), transparent);
+
+          .text-wrap-snap {
+            color: #F6FF00;
+
+            .label {
+              position: absolute;
+              top: 0;
+              right: 20rem;
+              font-weight: 700;
+              font-size: 1.5rem;
+              line-height: 1.4;
+              white-space: pre-line;
+              text-align: center;
+              margin-top: 6rem;
+              margin-bottom: 15rem;
+            }
+
+            .text-mask-snap {
+              margin-top: 0.5rem;
+
+              .text-snap-large {
+                font-size: 12rem;
+                font-weight: 900;
+                line-height: 1;
+                transition: opacity 0.3s ease;
+                text-align: center;
+                margin-top: 5px;
+                position: absolute;
+                top: 30rem;
+                left: 15rem;
+
+                &.first-layer {
+                  opacity: 1;
+                }
+
+                &.second-layer {
+                  opacity: 0;
+                }
+              }
+            }
+          }
+        }
+        .sectionTayler .text-wrap-snap {
+          .label {
+            margin-top: 10rem; // label을 더 아래로
+          }
+          .text-mask-snap {
+            margin-top: 20px; // texts를 label보다 위로
+          }
+        }
+        .snap-bottom-gradient {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 1.5rem;
+          background: linear-gradient(0deg, rgba(42, 33, 25, 0.8), transparent);
+          color: white;
+
+          .button-wrap-snap {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            .toggle-box {
+              position: relative;
+              width: $toggle-width;
+              width: 280px;
+              height: 70px;
+              background-color: #F6E636;
+              border: 2px solid #F6E636;
+              border-radius: 999px;
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+              overflow: hidden;
+              transition: background-color 0.3s ease;
+
+              .toggle-text {
+                position: absolute;
+                width: 220px;
+                text-align: center;
+                font-weight: 700;
+                font-size: 1.2rem;
+                color: #333;
+                transition: opacity 0.3s ease;
+
+                &.left {
+                  right: 0;
+                  opacity: 1;
+                }
+
+                &.right {
+                  left: 0;
+                  opacity: 0;
+                }
+              }
+
+              .toggle-circle {
+                width: $circle-size;
+                height: $circle-size;
+                border-radius: 50%;
+                background-color: orangered;
+                position: absolute;
+                top: .2rem;
+                left: $padding;
+                transition: left 0.4s ease;
+              }
+
+              &.toggled {
+                .toggle-circle {
+                  left: $circle-toggled-left; // 200 - 42 - 4
+                }
+
+                .toggle-text.left {
+                  opacity: 0;
+                }
+
+                .toggle-text.right {
+                  opacity: 1;
+                }
+              }
+            }
+
+            .label {
+              font-weight: 400;
+              font-size: 0.9rem;
+              opacity: 0.85;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
+
+
+    
+  
+}
+}

@@ -1,0 +1,67 @@
+/* src/page/Brand.scss */
+
+
+#brandWrap {
+  width: 100%;
+  height: 300vh;
+  background: url('../img/ivory_bg.jpg');
+}
+.brand-page {
+  width: 100%;
+  height: 300vh;
+  background: url('../img/ivory_bg.jpg');
+}
+
+
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.banner_1,
+.banner_2,
+.banner_3,
+.banner_4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+
+.one .y {
+  position: absolute;
+  left: 0;
+  top: 15%;
+}
+
+.one .g {
+  position: absolute;
+  right: 50px;
+  bottom: 15%;
+}
+
+.two .p {
+  position: absolute;
+  left: 0;
+  top: 15%;
+}
+
+.two .b {
+  position: absolute;
+  right: 50px;
+  bottom: 0%;
+}
+
+.three .o {
+  position: absolute;
+  right: 0;
+  top: 20%;
+}
+
+.three .pp {
+  position: absolute;
+  left: 5%;
+  bottom: 15%;
+}

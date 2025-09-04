@@ -1,0 +1,301 @@
+/* src/pages/Genre.scss */
+@import '../components/fonts.scss'; 
+
+*{margin: 0; padding:0;}
+.genre-page {
+  width: 100%;
+  height: 100vh;
+  padding: 5rem;
+  padding-top: 4rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #000;
+  background: url('../img/ivory_bg.jpg') no-repeat center center/cover;
+  overflow: hidden;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.genre-header-image-txt {
+  position: absolute;
+  width: 100%;
+  top: 11rem;
+  left: -22%;
+  transform: translateY(-25%);
+  z-index: 2;
+  font-size: 2.7rem;
+  font-family: 'KIMM';
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  flex-wrap: wrap;
+  
+  pointer-events: none;
+
+  .char {
+    display: inline-block;
+    opacity: 0;
+    margin-right: .5rem;
+    transition: all 0.3s ease;
+  }
+  .genre-line {
+  display: block;      // ✅ 줄바꿈용 블록
+  line-height: 1.2;
+  text-align: center;  // 선택: 가운데 정렬
+}
+
+}
+
+.genre-header-image-orange{
+  position: absolute;
+  width: 14rem;
+  transform: rotate(180deg);
+  top: 4.5rem;
+  left: 0;
+  z-index: 99999;
+}
+.genre-header-image-green{
+  position: absolute;
+  width: 20rem;
+  bottom: -3rem;
+  right: -6rem;
+  z-index: 1;
+}
+
+
+
+
+.genre-container{
+  position: absolute;
+  bottom: -4rem;
+  justify-content: center;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  
+  
+}
+.genre-content-left {
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 25px;
+  width: 50%;
+  height: 83%;
+  align-items: flex-start;
+  .genre-navWrap {
+  position: absolute;
+  top: 12.3rem;
+  left: 9.7rem;
+  z-index: 10;
+  width: 100%; // 이미지 위에 올라가는 크기로 줄임
+}
+.genre-nav {
+  flex-wrap: wrap;
+  // gap: 1rem;
+  width: 100%;
+  height: auto;
+  background: none;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    width: 5rem;
+    background: #f6e636;
+    margin-bottom: 0.5rem;
+    height: 5em;
+    border-radius: 20% 0 0 20%;
+    font-family: 'KIMM';
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: -0.65rem;
+    transition: all 0.2s ease; // 💡 부드럽게 커지는 애니메이션 추가
+    
+    &:hover {
+      background-color: #f47a4b;
+      color: white;
+      border-color: #f47a4b;
+      width: 6rem;  // ← 사이즈 커지게!
+      left: -1.65rem;
+    }
+
+    &.active {
+      // background-color: #f47a4b;
+      color: white;
+      width: 6rem;
+      left: -1.65rem;
+    }
+  }
+}
+.genre-nav {
+  button.genre-btn {
+    transition: all 0.2s ease;
+    
+
+    &.pop:hover,
+    &.pop.active {
+      background-color: #FFFFC3;
+      color: black;
+    }
+
+    &.k-pop:hover,
+    &.k-pop.active {
+      background-color: #FF32FF;
+      color: white;
+    }
+
+    &.dance:hover,
+    &.dance.active {
+      background-color: #00B475;
+      color: white;
+    }
+
+    &.hip-hop:hover,
+    &.hip-hop.active {
+      background-color: #2054FF;
+      color: white;
+    }
+
+    &.ballad:hover,
+    &.ballad.active {
+      background-color: #BE4A01;
+      color: white;
+    }
+
+    &.ost:hover,
+    &.ost.active {
+      background-color: #FF4B4C;
+      color: white;
+    }
+  }
+}
+
+  .genre-image {
+    flex: 1;
+    padding-top: 11rem;
+    img {
+      margin-left: 13rem;
+      width: 30rem;
+      max-width: 500px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+
+ 
+}
+.genre-content-right{
+  display: flex;
+  margin-top: -3.5rem;
+  background: #FFFFC3;
+  border-radius: 25px;
+  width: 48%;
+  height: 88%;
+  // gap: 11rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+    .track-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      box-sizing: border-box;
+    }
+  
+    .track-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 46rem;
+      position: relative;
+        
+        .album-art {
+          width: 60px;
+          height: 60px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+  
+        // 세로줄 추가
+        .divider {
+          width: 1px;
+          height: 60px; // 세로줄 길이 조절
+          background: #000000;
+          margin: 0 0.5rem;
+        }
+        .track-info {
+          z-index: 999;
+          display: flex;
+          background: #fff;
+          padding: 0.6rem 1rem 0.3rem 1rem;
+          box-sizing: border-box;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+          height: 4rem;
+          width: 43rem;
+          justify-content: space-between;
+          .track-info-left{
+            height: 100%;
+            align-items: center;
+        
+        
+        h3 {
+          width: 34rem;
+          font-family: 'KIMM';
+          font-weight: 800;
+          white-space: nowrap;         // 한 줄로 표시
+          overflow: hidden;            // 넘친 내용 숨기기
+          text-overflow: ellipsis;
+        }
+  
+        p {
+          margin-top: .3rem;
+          font-size: .8rem;
+        }
+      }  
+  
+      a {
+        color: #f47a4b;
+        text-decoration: none;
+        font-size: 2rem;
+        cursor: pointer;
+        height: 100%;
+        transition: .3s;
+        &:hover {
+          color: #37ff8a;
+        }
+      }
+    }
+    }
+  
+  
+    
+  }
+.footer__up {
+      position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  padding: 0 !important;
+  box-sizing: border-box;
+  z-index: 20;
+
+      .banner-track {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        animation: banner-scroll 20s linear infinite;
+        // 이미지가 충분히 많으면 자연스럽게 반복됨
+      }
+
+    .banner-img {
+        height: 60px; // 이미지 높이 조절
+        user-select: none;
+        pointer-events: none;
+      }
+    }

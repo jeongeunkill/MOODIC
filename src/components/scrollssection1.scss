@@ -1,0 +1,106 @@
+*{box-sizing: border-box;}
+li{
+    list-style: none;
+}
+
+.scroll-section1 {
+    
+    position: relative;
+    width: 100%;
+    background: url(../img/bg.jpg) no-repeat center center/cover;
+
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  font-family: 'Pretendard', sans-serif;
+  color: #000;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 30px;
+
+    .header-left {
+      /* flex: 1; */
+
+      .album-cover {
+        width: 550px;
+      }
+    }
+
+    .header-right {
+      /* flex: 1; */
+      margin-left: 30px;
+      text-align: center;
+      position: relative;
+
+      .grammy-logo {
+        width: 900px;
+        padding-top: 30px;
+      }
+      .top3{
+        width: 900px;
+        padding-top: 20px;
+      }
+      .right_section{
+        border: 6px solid #000;
+        box-sizing: border-box;
+        height: 550px;
+      }
+
+      .medal {
+        position: absolute;
+        bottom: -296px;
+        right: 90px;
+        width: 300px;
+      }
+    }
+  }
+
+  .content {
+    margin-top: 10px;
+
+    .name {
+        width: 800px;
+    }
+
+    .intro {
+        padding-left: 13px;
+        
+      font-size: 20px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      font-weight:600;
+
+      strong {
+        color: #222;
+      }
+    }
+
+    .award-section {
+      h3 {
+        padding-left: 13px;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        list-style: disc;
+        padding-left: 12px;
+        font-size: 20px;
+
+        li {
+            padding-left: 13px;
+          margin-bottom: 14px;
+          font-weight: 600;
+
+          strong {
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+}

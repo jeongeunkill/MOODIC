@@ -1,0 +1,239 @@
+@import './fonts.scss'; 
+
+.main {
+  width: 100%;
+  height: 110rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('../img/home_bg.png') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* 우측 하단 로고 */
+.corner-logo {
+  position: absolute;
+  top: 10rem; /* 변경: 하단 → 상단 */
+  right: 5rem;
+  width: 10rem;
+  height: auto;
+  z-index: 20;
+}
+
+/* 컨트롤 버튼 */
+.controlBtn {
+  position: absolute;
+  top: 28%;
+  left: 10rem;
+  transform: translateY(-50%);
+  
+  .nextBtn,
+  .prevBtn {
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  .resetBtn {
+    margin-top: .5rem;
+    
+    cursor: pointer;
+    .insta-logo {
+      
+      width: 4rem;
+      height: 4rem;
+      
+    }
+  }
+
+}
+
+/* 메인 텍스트 & 앨범 슬라이더 */
+.mainTextImg {
+  padding-top: 15rem;
+  width: 65%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  
+
+  .mainText {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    
+
+    .mainTitle {
+      font-size: 4rem;
+      font-family: 'KIMM';
+      font-weight: 800;
+      color: #000;
+      line-height: 1.2;
+      margin-bottom: 4rem;
+    }
+
+    .mainSubtitle {
+      font-size: 1.6rem;
+      font-family: 'KIMM';
+      font-weight: 400;
+      color: #000;
+      line-height: 1;
+    }  
+      
+    .mainSubtitle2{
+      position: relative;
+      span{
+        margin-top: 4rem;
+        font-family: 'KIMM';
+        font-weight: 800;
+        }
+      .pointer{
+          position: absolute;
+          top: 1.7rem;
+          right: 1rem;
+          font-size: 1.2rem;
+          transform: rotate(90deg);
+          
+        }  
+    }  
+    
+  }
+
+  .mainImg_slider {
+    width: 35rem;
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mySwiper {
+      width: 100%;
+      height: 100%;
+
+      .albumImg {
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0.4rem 2rem rgba(255, 255, 255, 0.6);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.03);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 인스타그램 영역 */
+.insta-wrapper {
+  position: relative;
+  width: 100%;
+  height: 50rem;
+
+  .insta-top {
+    width: 100%;
+    height: 12.6rem;
+    background: #000;
+    position: absolute;
+    bottom: -9rem;
+    padding: 20px;
+
+    .insta-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  .insta-bottom {
+    position: absolute;
+    bottom: -10rem;
+    width: 100%;
+    height: 50rem;
+    padding: 3rem 4rem;
+    transition: transform 0.4s ease;
+
+    .insta-swiper {
+      .swiper-slide {
+        border-radius: 2rem;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+
+        .slide-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.3s ease;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.03);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 활성화 시 확장 효과 */
+.insta-wrapper.active {
+  height: 700px;
+  overflow: visible;
+
+  .insta-bottom {
+    transform: translateY(0);
+    height: 100%;
+  }
+
+  .insta-top {
+    display: block;
+  }
+}
+
+/* 하단 배너 */
+.bottom-banner {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  z-index: 100;
+
+  .banner-track {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    animation: banner-scroll 20s linear infinite;
+  }
+
+  .banner-img {
+    height: 5rem;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+/* 배너 무한 스크롤 애니메이션 */
+@keyframes banner-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

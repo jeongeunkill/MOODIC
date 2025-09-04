@@ -1,0 +1,193 @@
+@import './fonts.scss'; 
+
+.mainNav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  background: none;
+  z-index: 999999999;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* justify-content: space-between; */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'KIMM';
+  font-weight: 800;
+
+  &.scrolled {
+    background-color: #ffffff; 
+    /* box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5); */
+
+    .logo img {
+      /* filter: brightness(0) invert(1); */ // 로고가 흰색으로 보이게 필터 처리 예시
+      transition: filter 0.3s ease;
+    }
+
+    .mainNav_center button,
+    .mainNav_right a {
+      color: #000; // 스크롤 시 버튼 색상 변경
+      transition: color 0.3s ease;
+      /* &:hover {
+        color: lighten(#f47a4b, 10%);
+      } */
+    }
+    
+  }
+
+  .logo {
+    position: relative;
+    flex: 1;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      justify-content: flex-start;
+      width: 10rem;
+      height: auto;
+      transition: filter 0.3s ease;
+      
+    }
+  }
+
+  .mainNav_center {
+    flex: 1;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+
+      li {
+      list-style: none;
+      margin: 0 10px;
+      
+
+        button {
+          padding: 4px 8px;
+          border: none;
+          background: none;
+          font-size: 1.1rem;
+          font-family: 'KIMM';
+          font-weight: 800;
+          
+          cursor: pointer;
+          transition: color 0.3s, font-weight 0.3s;
+          .NavCIon{
+            font-size: 1.7rem;
+            margin-top: .5rem;
+          }
+          
+        }
+
+      &:nth-child(1) button:hover {
+        color: #fb6f7a;
+      }
+
+      &:nth-child(2) button:hover {
+        color: #f47a4b;
+      }
+
+      &:nth-child(3) button:hover {
+        color: #fed440;
+      }
+
+      &:nth-child(4) button:hover {
+        color: #b474b4;
+      }
+
+      &:nth-child(5) button:hover {
+        color: #55a3ff;
+      }
+    }
+  }
+
+
+
+  
+  .mainNav_right {
+    flex: 1;
+    margin-left: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    li {
+      list-style: none;
+      input{
+        border: none;
+        background: none;
+        width: 4rem;
+        height: 1.3rem;
+        border-bottom: 1px solid #000;
+        cursor: pointer;
+        outline: none;
+
+        
+      }
+      button{
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1rem;
+        font-weight: 800;
+        transition: color 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          color: #f47a4b;
+          font-weight: 800;
+        }
+      }
+    }
+    .user-menu {
+      position: relative;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropdown {
+        position: absolute;
+        top: 2.82rem;
+        right: -2rem;
+        background: url(../img/ivory_bg.jpg);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 6rem;
+        height: 6rem;
+        padding: 8px 0;
+        z-index: 999;
+
+        li {
+          padding: 8px 12px;
+          a {
+
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+            &:hover {
+              color: #b474b4;
+              font-weight: 900;
+            }
+          }
+        }
+      }
+    }
+  }
+}

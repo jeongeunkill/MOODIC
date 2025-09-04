@@ -1,0 +1,40 @@
+.preloader {
+  width: 100%;
+  
+  /* position: fixed; */
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+
+  .wrap-preloader-logo {
+    height: 0%;
+    overflow: hidden;
+    transition: height 0.5s ease;
+
+    .preloader-logo {
+      position: relative;
+      width: 180px;
+
+      .logo-hero {
+        width: 100%;
+        height: auto;
+        display: block;
+        
+      }
+
+      .overlay-preloader-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: #000;
+        z-index: 2;
+      }
+    }
+  }
+}
